@@ -33,7 +33,6 @@ function Questions() {
 
   const value = useContext(AppContext);
   let { questionAnswer, questions, answers } = value.state;
-  console.log(answers.length, questions.length);
 
   useEffect(() => {
     setProgress(

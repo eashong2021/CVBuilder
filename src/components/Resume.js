@@ -3,7 +3,7 @@ import AppContext from "../AppContext";
 import { makeStyles } from "@material-ui/core/styles";
 import { IconButton } from "@material-ui/core";
 import { jsPDF } from 'jspdf';
-import {html2canvas} from 'html2canvas';
+import html2canvas from 'html2canvas';
 
 
 //styling
@@ -51,14 +51,18 @@ function Resume() {
   const classes = useStyles();
 
   let { answers } = value.state;
+  //ref.current.focus();
 
   //function to print/download resume as pdf
     const printResume = () => {
-        const resume = document.getElementsByClassName('makeStyles-resume-19');
-        html2canvas(resume).then(canvas => {
-            const imgData = canvas.toDataURL('image/png');
-            const pdf = new jsPDF();
-            pdf.addImage(imgData, 'JPEG', 0, 0);
+        const resume = document.getElementsByClassName(classes.resume);
+        html2canvas(resume)
+        .then((canvas) => {
+            //const imgWidth = 208;
+            //const imgHeight = canvas.height * imgWidth / canvas.width;
+            const imgData = canvas.toDataURL('img/png');
+            const pdf = new jsPDF(); //'p', 'mm', 'a4'
+            pdf.addImage(imgData, 'JPEG', 0, 0);// imgWidth, imgHeight);
             pdf.save('download.pdf');
         })
     }
@@ -68,7 +72,7 @@ function Resume() {
       <div ref={ref} className={classes.resume}>
         {answers.map((answer) => {
           return (
-            <div>
+            <div className="resume">
               {answer.resumeFieldId === "name" ||
               answer.resumeFieldId === "email" ||
               answer.resumeFieldId === "address" ||
@@ -78,7 +82,7 @@ function Resume() {
                     textAlign: "right",
                   }}
                 >
-                  <label>{answer.answer}</label>
+                  <label>{answer.resumeFieldId}:{answer.answer}</label>
                 </div>
               ) : (
                 <div>
@@ -105,13 +109,6 @@ function Resume() {
             <button className={classes.buttonBuildNew} onClick={refreshPage}>
             Build New
             </button>
-            
-        {/* <Pdf targetRef={ref} filename="code-example.pdf">
-          {({ toPdf }) => (
-            
-          )}
-        </Pdf>  */}
-
       </div>
     </div>
   );

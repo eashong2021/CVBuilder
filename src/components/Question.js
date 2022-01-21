@@ -21,17 +21,24 @@ import { ArrowRight } from "@material-ui/icons";
   
     let { questionAnswer } = value.state;
     let { handleChangeInput, nextQuestion } = value.function;
+   
     let textFieldID = 'outlined-basic';
+    let type = '';
     let attributeValue = 1;
     if(questionAnswer.question === 'Experience'){
       textFieldID = 'standard-multiline-flexible';
       attributeValue = 4;
+    }
+    if(questionAnswer.question === 'Email'){
+      type = 'email';
     }
 
     return (
       <div>
         <form noValidate autoComplete="on" onSubmit={nextQuestion}>
           <TextField
+            type={type}
+            required={true}
             id={textFieldID}
             label={questionAnswer.question}
             name={questionAnswer.resumeFieldId}
