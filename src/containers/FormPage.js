@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import Form from "../components/Form/Form";
-import Cv from '../components/Cv/Cv'
+import { useNavigate } from "react-router-dom";
 
 export const FormPage = ({addPersonDetails}) =>{
 
+    //creating and setting states 
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -14,7 +15,9 @@ export const FormPage = ({addPersonDetails}) =>{
     const [experience1, setExperience1] = useState('');
     const [education, setEducation] = useState('');
     const [education1, setEducation1] = useState('');
-    
+
+
+    //instance of the personDetails state to save and addPersonDetails
     const personDetail ={
         name,
         address,
@@ -27,12 +30,16 @@ export const FormPage = ({addPersonDetails}) =>{
         education1
     }
 
+    let navigate = useNavigate();
+
+    //function to handle form submit
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        //add person details to personDetails
         addPersonDetails(personDetail);
-        console.log(personDetail);
 
+        //clear input fields
         setName('');
         setPhoneNumber('');
         setEmail('')
@@ -43,8 +50,12 @@ export const FormPage = ({addPersonDetails}) =>{
         setEducation('')
         setEducation1('')
 
+        //navigate to cv component when button is clicked
+        navigate('/cv')
+
     }
 
+    //input handlers
     const handleNameChange = (e) => {
         setName(e.target.value);
     }
@@ -104,7 +115,7 @@ export const FormPage = ({addPersonDetails}) =>{
             handleEducationChange={handleEducationChange}
             education1={education1}
             handleEducation1Change={handleEducation1Change}
-
+            
         />
     
     </>
