@@ -33,7 +33,7 @@ const Cv = ({personDetails}) =>{
         <ReactToPrint 
         trigger={() => <button> Print/Download </button>}
         content={() => myRef.current}
-        documentTitle={personDetails[selector].name}
+        documentTitle={`${personDetails[selector].name}`}
             />
         <button> Share </button>
         </>
