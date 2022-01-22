@@ -1,7 +1,9 @@
+import React, {useRef} from "react";
+import ReactToPrint from 'react-to-print';
 
 
 const Cv = ({personDetails}) =>{
-
+    const myRef = useRef(null);
     let selector = 0;
     if(personDetails.length > 1){
         selector = personDetails.length - 1;
@@ -9,6 +11,7 @@ const Cv = ({personDetails}) =>{
 
     return(  
         <>
+        <div ref={myRef}>
         <section>
             <h3>{personDetails[selector].name}</h3>
             <h4>{personDetails[selector].address}</h4>
@@ -26,9 +29,13 @@ const Cv = ({personDetails}) =>{
             <p>{personDetails[selector].experience}</p>
             <p>{personDetails[selector].experience1}</p>
         </section>
-        <button onClick={()=> window.print()}> Print/Download CV</button>
+        </div>
+        <ReactToPrint 
+        trigger={() => <button> Print/Download </button>}
+        content={() => myRef.current}
+        documentTitle={personDetails[selector].name}
+            />
         <button> Share </button>
-
         </>
     )
 }
