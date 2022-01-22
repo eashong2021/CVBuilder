@@ -1,6 +1,7 @@
 
 
 const Cv = ({personDetails}) =>{
+
     let selector = 0;
     if(personDetails.length > 1){
         selector = personDetails.length - 1;
@@ -25,6 +26,9 @@ const Cv = ({personDetails}) =>{
             <p>{personDetails[selector].experience}</p>
             <p>{personDetails[selector].experience1}</p>
         </section>
+        <button onClick={()=> window.print()}> Print/Download CV</button>
+        <button> Share </button>
+
         </>
     )
 }

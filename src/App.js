@@ -19,8 +19,8 @@ function App() {
   return (
     <>
     <nav>
-      <Link to='/'>Form</Link>
-      <Link to='/cv'>Generate CV</Link>
+      <Link to="/">Form</Link>
+      <Link to="/cv">Generate CV</Link>
     </nav>
     
     

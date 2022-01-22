@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Form from "../components/Form/Form";
-import Cv from '../components/Cv/Cv'
+import { useNavigate } from "react-router-dom";
 
 export const FormPage = ({addPersonDetails}) =>{
 
@@ -27,6 +27,8 @@ export const FormPage = ({addPersonDetails}) =>{
         education1
     }
 
+    let navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -42,6 +44,8 @@ export const FormPage = ({addPersonDetails}) =>{
         setAddress('')
         setEducation('')
         setEducation1('')
+
+        navigate('/cv')
 
     }
 
@@ -104,7 +108,7 @@ export const FormPage = ({addPersonDetails}) =>{
             handleEducationChange={handleEducationChange}
             education1={education1}
             handleEducation1Change={handleEducation1Change}
-
+            
         />
     
     </>
