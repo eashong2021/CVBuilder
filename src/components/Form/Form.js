@@ -5,14 +5,14 @@ const Form = ({
 handleSubmit,
 name,
 handleNameChange,
-address,
-handleAddressChange,
 phoneNumber,
 handlePhoneChange,
 email,
 handleEmailChange,
 linkedInLink,
 handleLinkedInChange,
+address,
+handleAddressChange,
 experience,
 handleExperienceChange,
 experience1,
@@ -33,13 +33,7 @@ return(
             required
         ></input>
 
-        <input 
-            placeholder="Enter your address"
-            onChange={handleAddressChange}
-            value={address}
-        ></input>
-
-        <input 
+          <input 
             placeholder="Enter your phone number"
             type='tel'
             value={phoneNumber}
@@ -61,6 +55,25 @@ return(
             required
         ></input>
 
+        <input 
+            placeholder="Enter your address"
+            onChange={handleAddressChange}
+            value={address}
+        ></input>
+
+      
+       <textarea
+            placeholder="Experience"
+            onChange={handleExperienceChange}
+            value={experience}
+        ></textarea>
+
+        <textarea
+            placeholder="Experience"
+            onChange={handleExperience1Change}
+            value={experience1}
+        ></textarea>
+        
         <input
             placeholder="Education"
             onChange={handleEducationChange}
@@ -73,20 +86,7 @@ return(
             value={education1}
         ></input>
 
-        <textarea
-            placeholder="Experience"
-            onChange={handleExperienceChange}
-            value={experience}
-        ></textarea>
-
-        <textarea
-            placeholder="Experience"
-            onChange={handleExperience1Change}
-            value={experience1}
-        ></textarea>
-        
-        
-
+    
         <button type="submit">Generate CV</button>
 
     </form>

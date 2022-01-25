@@ -1,0 +1,53 @@
+.displayAll{
+    margin: auto;
+    background-color: rgb(103, 228, 78);
+    width: 100%;
+    height: 100%;
+}
+
+.left-side{
+    width: 70%;
+    /* height:  */
+    float: left;
+    padding: 3%;
+}
+
+.right-side{
+    width: 30%;
+    float: right;
+    background-color: rgb(167, 123, 207);
+}
+.myref {
+    
+}
+.profile{
+    display: block;
+    position: fixed;
+    width: 
+    
+}
+
+.profile-details{
+    float: right;
+}
+
+.profile-img{
+    float: left;
+}
+.profileimg-left{
+    width: 40%;
+    float: left;
+}
+
+.profiledetail--right{
+    width: 60%;
+    float: right;
+}
+.experience{
+    display: block;
+
+}
+.eduaction{
+    display: block;
+}
+
