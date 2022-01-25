@@ -6,6 +6,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import Cv from './components/Cv/Cv';
 
 
+
 function App() {
 
   const [ personDetails, setPersonDetails] = useState([{}]);

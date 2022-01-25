@@ -20,10 +20,10 @@ export const FormPage = ({addPersonDetails}) =>{
     //instance of the personDetails state to save and addPersonDetails
     const personDetail ={
         name,
-        address,
         phoneNumber,
         email,
         linkedInLink,
+        address,
         experience,
         experience1,
         education,
@@ -99,14 +99,14 @@ export const FormPage = ({addPersonDetails}) =>{
             handleSubmit = {handleSubmit}
             name={name}
             handleNameChange={handleNameChange}
-            address={address}
-            handleAddressChange={handleAddressChange}
             phoneNumber={phoneNumber}
             handlePhoneChange={handlePhoneChange}
             email={email}
             handleEmailChange={handleEmailChange}
             linkedInLink ={linkedInLink}
             handleLinkedInChange={handleLinkedInChange}
+            address={address}
+            handleAddressChange={handleAddressChange}
             experience={experience}
             handleExperienceChange={handleExperienceChange}
             experience1={experience1}
