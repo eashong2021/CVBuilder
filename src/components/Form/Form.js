@@ -2,8 +2,6 @@ import React from "react";
 import './form.css';
 
 const Form = ({
-handleImageUpload,
-image,
 handleSubmit,
 name,
 handleNameChange,
@@ -15,13 +13,33 @@ linkedInLink,
 handleLinkedInChange,
 address,
 handleAddressChange,
+
+handleExpStartChange,
+handleExpEndChange,
+expStartDate,
+expEndDate,
 experience,
 handleExperienceChange,
+
 experience1,
+handleExp1StartChange,
+handleExp1EndChange,
+exp1StartDate,
+exp1EndDate,
 handleExperience1Change,
+
+handleEduStartChange,
+handleEduEndChange,
 education,
+eduStartDate,
+eduEndDate,
 handleEducationChange,
+
 education1,
+handleEdu1StartChange,
+handleEdu1EndChange,
+edu1StartDate,
+edu1EndDate,
 handleEducation1Change
 }) => {
 
@@ -75,8 +93,8 @@ return(
         
         <fieldset>
             <legend>Experience</legend>
-            <label>From<input type='month'></input></label><br/>
-            <label>To<input type='month'></input></label><br/>
+            <label>Start<input type='month' value={expStartDate} onChange={handleExpStartChange}></input></label><br/>
+            <label>End<input type='month'value={expEndDate} onChange={handleExpEndChange}></input></label><br/>
             <textarea
                 placeholder="Experience"
                 onChange={handleExperienceChange}
@@ -84,8 +102,8 @@ return(
                 rows={10}
                 cols={50}
             ></textarea><br/>
-            <label>From<input type='month'></input></label><br/>
-            <label>To<input type='month'></input></label><br/>
+            <label>Start<input type='month' value={exp1StartDate} onChange={handleExp1StartChange}></input></label><br/>
+            <label>End<input type='month' value={exp1EndDate} onChange={handleExp1EndChange}></input></label><br/>
             <textarea
                 placeholder="Experience"
                 onChange={handleExperience1Change}
@@ -97,15 +115,15 @@ return(
         
         <fieldset>
             <legend>Education</legend>
-            <label>From<input type='month'></input></label><br/>
-            <label>To<input type='month'></input></label>
+            <label>Start<input type='month' value={eduStartDate} onChange={handleEduStartChange}></input></label><br/>
+            <label>End<input type='month' value={eduEndDate} onChange={handleEduEndChange}></input></label>
             <input
             placeholder="Education"
             onChange={handleEducationChange}
             value={education}
             ></input><br/>
-            <label>From<input type='month'></input></label><br/>
-            <label>To<input type='month'></input></label>
+            <label>Start<input type='month' value={edu1StartDate} onChange={handleEdu1StartChange}></input></label><br/>
+            <label>End<input type='month' value={edu1EndDate} onChange={handleEdu1EndChange}></input></label>
             <input
             placeholder="Education"
             onChange={handleEducation1Change}

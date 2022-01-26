@@ -11,8 +11,16 @@ export const FormPage = ({addPersonDetails}) =>{
     const [phoneNumber, setPhoneNumber] = useState('');
     const [email, setEmail] = useState('');
     const [linkedInLink, setLinkedInLink] = useState('');
+    const [exp1StartDate, setExp1StartDate] = useState('');
+    const [exp1EndDate, setExp1EndDate] = useState('');
+    const [expStartDate, setExpStartDate] = useState('');
+    const [expEndDate, setExpEndDate] = useState('');
     const [experience, setExperience] = useState('');
     const [experience1, setExperience1] = useState('');
+    const [eduStartDate, setEduStartDate] = useState('');
+    const [eduEndDate, setEduEndDate] = useState('');
+    const [edu1StartDate, setEdu1StartDate] = useState('');
+    const [edu1EndDate, setEdu1EndDate] = useState('');
     const [education, setEducation] = useState('');
     const [education1, setEducation1] = useState('');
     const [image, setImage] = useState('');
@@ -26,10 +34,21 @@ export const FormPage = ({addPersonDetails}) =>{
         email,
         linkedInLink,
         address,
+        expStartDate,
+        expEndDate,
         experience,
+        
+        exp1StartDate,
+        exp1EndDate,
         experience1,
+        
         education,
-        education1
+        eduStartDate,
+        eduEndDate,
+        
+        education1,
+        edu1StartDate,
+        edu1EndDate
     }
 
     let navigate = useNavigate();
@@ -47,10 +66,22 @@ export const FormPage = ({addPersonDetails}) =>{
         setPhoneNumber('');
         setEmail('')
         setLinkedInLink('')
-        setExperience('')
-        setExperience1('')
         setAddress('')
+
+        setExpStartDate('')
+        setExpEndDate('')
+        setExperience('')
+
+        setExp1StartDate('')
+        setExp1EndDate('')
+        setExperience1('')
+        
+        setEduStartDate('')
+        setEduEndDate('')
         setEducation('')
+    
+        setEdu1StartDate('')
+        setEdu1EndDate('')
         setEducation1('')
 
         //navigate to cv component when button is clicked
@@ -79,6 +110,38 @@ export const FormPage = ({addPersonDetails}) =>{
         setLinkedInLink(e.target.value);
     }
 
+    const handleExpStartChange = e => {
+        setExpStartDate(e.target.value)
+    }
+
+    const handleExpEndChange = e => {
+        setExpEndDate(e.target.value)
+    }
+
+    const handleExp1StartChange = e => {
+        setExp1StartDate(e.target.value)
+    }
+
+    const handleExp1EndChange = e => {
+        setExp1EndDate(e.target.value)
+    }
+
+    const handleEduStartChange = e => {
+        setEduStartDate(e.target.value)
+    }
+
+    const handleEduEndChange = e => {
+        setEduEndDate(e.target.value)
+    }
+
+    const handleEdu1StartChange = e => {
+        setEdu1StartDate(e.target.value)
+    }
+
+    const handleEdu1EndChange = e => {
+        setEdu1EndDate(e.target.value)
+    }
+
     const handleExperienceChange = (e) => {
         setExperience(e.target.value);
     }
@@ -105,7 +168,7 @@ export const FormPage = ({addPersonDetails}) =>{
     return(
     <>
         <Form
-            ref={fileInput}
+            
             handleImageUpload = {handleImageUpload}
             image={image}
             handleSubmit = {handleSubmit}
@@ -119,12 +182,32 @@ export const FormPage = ({addPersonDetails}) =>{
             handleLinkedInChange={handleLinkedInChange}
             address={address}
             handleAddressChange={handleAddressChange}
+
+            handleExpStartChange={handleExpStartChange}
             experience={experience}
+            expStartDate = {expStartDate}
+            expEndDate = {expEndDate}
+            handleExpEndChange={handleExpEndChange}
             handleExperienceChange={handleExperienceChange}
+
+            handleExp1StartChange={handleExp1StartChange}
             experience1={experience1}
+            exp1StartDate = {exp1StartDate}
+            exp1EndDate = {exp1EndDate}
+            handleExp1EndChange={handleExp1EndChange}
             handleExperience1Change={handleExperience1Change}
+
+            handleEduStartChange={handleEduStartChange}
+            handleEduEndChange={handleEduEndChange}
             education={education}
+            eduStartDate={eduStartDate}
+            eduEndDate = {eduEndDate}
             handleEducationChange={handleEducationChange}
+
+            handleEdu1StartChange={handleEdu1StartChange}
+            handleEdu1EndChange={handleEdu1EndChange}
+            edu1StartDate={edu1StartDate}
+            edu1EndDate = {edu1EndDate}
             education1={education1}
             handleEducation1Change={handleEducation1Change}
             

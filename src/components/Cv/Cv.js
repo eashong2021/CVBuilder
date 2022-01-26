@@ -23,7 +23,7 @@ const Cv = ({ personDetails }) => {
                 <img className="profile-img" src={personDetails[selector].image} alt=""></img>
               </div>
               <div className="profiledetail-right">
-                <div >
+                <div>
                   <div>
                     <h3 className="heading-left">{personDetails[selector].name}</h3>
                     <h4 className="job-title">Current job role</h4>
@@ -43,14 +43,18 @@ const Cv = ({ personDetails }) => {
             <div>
               <section className="experience">
                 <h2 className="heading-left">Experience</h2>
+                <h4>{personDetails[selector].expStartDate}</h4>
                 <p>{personDetails[selector].experience}</p>
+                <h4>{personDetails[selector].exp1StartDate}</h4>
                 <p>{personDetails[selector].experience1}</p>
               </section>
             </div>
             <div>
               <section className="education">
                 <h2 className="heading-left">Education</h2>
+                <h4>{personDetails[selector].eduStartDate}</h4>
                 <p>{personDetails[selector].education}</p>
+                <h4>{personDetails[selector].edu1StartDate}</h4>
                 <p>{personDetails[selector].education1}</p>
               </section>
             </div>
