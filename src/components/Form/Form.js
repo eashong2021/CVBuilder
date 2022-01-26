@@ -2,6 +2,7 @@ import React from "react";
 import './form.css';
 
 const Form = ({
+handleImageUpload ,
 handleSubmit,
 name,
 handleNameChange,
@@ -26,6 +27,7 @@ return(
     <>
     
     <form onSubmit={handleSubmit}>
+        <label>Upload Photo</label><input type="file" onChange={handleImageUpload}></input>
         <input 
             placeholder="Enter your name"
             onChange={handleNameChange}

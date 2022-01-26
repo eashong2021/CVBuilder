@@ -15,6 +15,7 @@ export const FormPage = ({addPersonDetails}) =>{
     const [experience1, setExperience1] = useState('');
     const [education, setEducation] = useState('');
     const [education1, setEducation1] = useState('');
+    const [image, setImage] = useState('');
 
 
     //instance of the personDetails state to save and addPersonDetails
@@ -92,10 +93,15 @@ export const FormPage = ({addPersonDetails}) =>{
         setEducation1(e.target.value);
     }
 
+    const handleImageUpload = (e) => {
+        setImage(e.target.files);
+    }
+
 
     return(
     <>
         <Form
+            handleImageUpload = {handleImageUpload}
             handleSubmit = {handleSubmit}
             name={name}
             handleNameChange={handleNameChange}

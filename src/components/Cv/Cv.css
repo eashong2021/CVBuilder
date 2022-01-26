@@ -1,53 +1,62 @@
-.displayAll{
-    margin: auto;
-    background-color: rgb(103, 228, 78);
-    width: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.displayAll {
+    width: 960px;
+ 
+    margin: 0 auto;
+}
+
+.left-side {
+    float: left;
+    width: 70%;
+    padding: 55px;
     height: 100%;
 }
 
-.left-side{
-    width: 70%;
-    /* height:  */
-    float: left;
-    padding: 3%;
-}
-
-.right-side{
+.right-side {
+    float: right;
+    background-color: blue;
+    color: rgb(248, 244, 218);
     width: 30%;
-    float: right;
-    background-color: rgb(167, 123, 207);
+    padding: 55px 25px;
+    height: 100%;
+
 }
-.myref {
+
+.buttons {
+    clear: both;
+    display: flex;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.profileimg-left {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: rgb(197, 197, 197);
+}
+
+.profiledetail-right{
+    margin-left: 10px;
+}
+
+
+.heading-left {
+    color: blue;
+    margin: 20 20px 20px 0;
+}
+
+.other-personal{
+    line-height: 1.2;
     
 }
+
 .profile{
-    display: block;
-    position: fixed;
-    width: 
-    
-}
-
-.profile-details{
-    float: right;
-}
-
-.profile-img{
-    float: left;
-}
-.profileimg-left{
-    width: 40%;
-    float: left;
-}
-
-.profiledetail--right{
-    width: 60%;
-    float: right;
-}
-.experience{
-    display: block;
-
-}
-.eduaction{
-    display: block;
+    display: flex;
 }
 
