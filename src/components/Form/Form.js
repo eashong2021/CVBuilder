@@ -2,7 +2,8 @@ import React from "react";
 import './form.css';
 
 const Form = ({
-handleImageUpload ,
+handleImageUpload,
+image,
 handleSubmit,
 name,
 handleNameChange,
@@ -23,11 +24,16 @@ handleEducationChange,
 education1,
 handleEducation1Change
 }) => {
+
 return(
     <>
     
     <form onSubmit={handleSubmit}>
-        <label>Upload Photo</label><input type="file" onChange={handleImageUpload}></input>
+        <fieldset>
+            <legend>Profile</legend>
+            <label>
+            Upload Photo<input type="file"></input>
+        </label>
         <input 
             placeholder="Enter your name"
             onChange={handleNameChange}
@@ -39,6 +45,7 @@ return(
             placeholder="Enter your phone number"
             type='tel'
             value={phoneNumber}
+            pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
             onChange={handlePhoneChange}
         ></input>
 
@@ -52,6 +59,7 @@ return(
 
         <input 
             placeholder="Enter your linkedIn address"
+            type='url'
             onChange={handleLinkedInChange}
             value={linkedInLink}
             required
@@ -63,30 +71,48 @@ return(
             value={address}
         ></input>
 
-      
-       <textarea
-            placeholder="Experience"
-            onChange={handleExperienceChange}
-            value={experience}
-        ></textarea>
-
-        <textarea
-            placeholder="Experience"
-            onChange={handleExperience1Change}
-            value={experience1}
-        ></textarea>
+        </fieldset>
         
-        <input
+        <fieldset>
+            <legend>Experience</legend>
+            <label>From<input type='month'></input></label><br/>
+            <label>To<input type='month'></input></label><br/>
+            <textarea
+                placeholder="Experience"
+                onChange={handleExperienceChange}
+                value={experience}
+                rows={10}
+                cols={50}
+            ></textarea><br/>
+            <label>From<input type='month'></input></label><br/>
+            <label>To<input type='month'></input></label><br/>
+            <textarea
+                placeholder="Experience"
+                onChange={handleExperience1Change}
+                value={experience1}
+                rows={10}
+                cols={50}
+            ></textarea>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Education</legend>
+            <label>From<input type='month'></input></label><br/>
+            <label>To<input type='month'></input></label>
+            <input
             placeholder="Education"
             onChange={handleEducationChange}
             value={education}
-        ></input>
-
-        <input
+            ></input><br/>
+            <label>From<input type='month'></input></label><br/>
+            <label>To<input type='month'></input></label>
+            <input
             placeholder="Education"
             onChange={handleEducation1Change}
             value={education1}
-        ></input>
+            ></input>
+        </fieldset>
+        
 
     
         <button type="submit">Generate CV</button>

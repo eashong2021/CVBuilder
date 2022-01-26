@@ -20,6 +20,7 @@ export const FormPage = ({addPersonDetails}) =>{
 
     //instance of the personDetails state to save and addPersonDetails
     const personDetail ={
+        image,
         name,
         phoneNumber,
         email,
@@ -32,6 +33,7 @@ export const FormPage = ({addPersonDetails}) =>{
     }
 
     let navigate = useNavigate();
+    let fileInput = React.createRef();
 
     //function to handle form submit
     const handleSubmit = (e) => {
@@ -93,15 +95,19 @@ export const FormPage = ({addPersonDetails}) =>{
         setEducation1(e.target.value);
     }
 
-    const handleImageUpload = (e) => {
-        setImage(e.target.files);
+    const handleImageUpload = () => {
+        
+        //setImage(URL.createObjectURL(e.target.files));
+        setImage(fileInput.current.files[0].name);
     }
 
 
     return(
     <>
         <Form
+            ref={fileInput}
             handleImageUpload = {handleImageUpload}
+            image={image}
             handleSubmit = {handleSubmit}
             name={name}
             handleNameChange={handleNameChange}

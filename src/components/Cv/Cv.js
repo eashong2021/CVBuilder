@@ -20,7 +20,7 @@ const Cv = ({ personDetails }) => {
           <section className="personal">
             <div className="profile">
               <div className="profileimg-left">
-                <img className="profile-img" src="" alt=""></img>
+                <img className="profile-img" src={personDetails[selector].image} alt=""></img>
               </div>
               <div className="profiledetail-right">
                 <div >
@@ -42,14 +42,14 @@ const Cv = ({ personDetails }) => {
           <div className="job-info">
             <div>
               <section className="experience">
-                <h2 class="heading-left">Experience</h2>
+                <h2 className="heading-left">Experience</h2>
                 <p>{personDetails[selector].experience}</p>
                 <p>{personDetails[selector].experience1}</p>
               </section>
             </div>
             <div>
               <section className="education">
-                <h2 class="heading-left">Education</h2>
+                <h2 className="heading-left">Education</h2>
                 <p>{personDetails[selector].education}</p>
                 <p>{personDetails[selector].education1}</p>
               </section>
