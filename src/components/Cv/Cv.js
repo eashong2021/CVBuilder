@@ -24,16 +24,16 @@ const Cv = ({ personDetails }) => {
               </div>
               <div className="profiledetail-right">
                 <div>
-                  <div>
+                  <div >
                     <h3 className="heading-left">{personDetails[selector].name}</h3>
-                    <h4 className="job-title">Current job role</h4>
+                    <h4 className="job-title">{personDetails[selector].job}</h4>
                   </div>
 
                   <div className="other-personal">
-                  <p>{personDetails[selector].phoneNumber}</p>
-                  <p>{personDetails[selector].email}</p>
-                  <p>{personDetails[selector].linkedInLink}</p>
-                  <p>{personDetails[selector].address}</p>
+                    <p>{personDetails[selector].phoneNumber}</p>
+                    <p>{personDetails[selector].email}</p>
+                    <p>{personDetails[selector].linkedInLink}</p>
+                    <p>{personDetails[selector].address}</p>
                   </div>
                 </div>
               </div>
@@ -77,15 +77,12 @@ const Cv = ({ personDetails }) => {
       </div>
       </div>
       <div className="buttons">
-        <div>
-       
-          <ReactToPrint
+        <ReactToPrint
             trigger={() => <button className="share-print"> Print/Download </button>}
             content={() => myRef.current}
             documentTitle={`${personDetails[selector].name}`}
-            />
-          <button className="share-print"> Share </button>
-        </div> 
+        />
+        <button className="share-print"> Share </button>
       </div>
     </div>
   );
