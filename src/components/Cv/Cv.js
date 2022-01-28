@@ -72,16 +72,16 @@ const Cv = ({ personDetails }) => {
         </div>
         <div className="right-side">
           <div>
-            <h2>Personal Profile</h2>
+            <h2></h2>
           </div>
           <div>
-            <h2>Professional Skill</h2>
+            <h2></h2>
           </div>
           <div>
-            <h2>Personal Skills</h2>
+            <h2></h2>
           </div>
           <div>
-            <h2>right side</h2>
+            <h2></h2>
           </div>
         </div>
       </div>

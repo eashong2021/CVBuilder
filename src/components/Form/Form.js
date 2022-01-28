@@ -54,9 +54,9 @@ const Form = ({
           <legend className="profile">Profile</legend>
           <br />
           <br />
-          <label className="form-label">
-            Upload Photo<input className="file-upload" accept="image/*" type="file" onChange={handleImageUpload}></input>
-          </label>
+          <label className="form-label">Upload Photo </label>
+          <input className="file-upload" accept="image/*" type="file" onChange={handleImageUpload}></input>
+          
          
           <div className="line-1">
           <input
@@ -144,7 +144,7 @@ const Form = ({
             placeholder="Experience"
             onChange={handleExperienceChange}
             value={experience}
-            rows={10}
+            rows={7}
             cols={50}
             //required
             className="textarea"
@@ -179,7 +179,7 @@ const Form = ({
             placeholder="Experience"
             onChange={handleExperience1Change}
             value={experience1}
-            rows={10}
+            rows={7}
             cols={50}
             className="textarea"
           ></textarea>

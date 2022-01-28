@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .displayAll {
@@ -40,15 +41,15 @@
 }
 
 .profileimg-left {
-    height: 150px;
-    width: 150px;
+    height: 180px;
+    width: 180px;
     border-radius: 50%;
     background-color: rgb(197, 197, 197);
 }
 
 .profile-img{
-    height: 150px;
-    width: 150px;
+    height: 180px;
+    width: 180px;
     border-radius: 50%;
 }
 
@@ -60,10 +61,11 @@
 .heading-left {
     color: blue;
     margin: 20 20px 20px 0;
+    font-size: 20px;
 }
 
 .other-personal{
-    line-height: 1.2;
+    line-height: 1.4;
     
 }
 
@@ -72,7 +74,8 @@
 }
 
 .job-info{
-    margin-top: 50px;
+    margin-top: 70px;
+    line-height: 4;
 }
 
 .share-print{
