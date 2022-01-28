@@ -28,13 +28,13 @@
 }
 
 .links{
-  font-size: 16px;
+  font-size: 0.7em;
   letter-spacing: 2px;
   font-weight: 400 !important;
   background-color: #483434;
   color: #fff;
-  padding: 23px 50px;
-  margin: auto 40px;
+  padding: 1.4em 3em;
+  margin: auto 2.5em;
   text-decoration: none;
   border: 0px;
 

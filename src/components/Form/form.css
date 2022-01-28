@@ -96,6 +96,7 @@ textarea{
     border-radius: 10px;
     height: max-content;
     padding: 1em;
+    margin: auto;
  }
 .form-content .institution {
     margin-top: 2em;
