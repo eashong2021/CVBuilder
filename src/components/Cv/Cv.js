@@ -1,15 +1,24 @@
-import React, { useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactToPrint from "react-to-print";
 import "./Cv.css";
 
 const Cv = ({ personDetails }) => {
   const myRef = useRef(null);
+  const [imgUrl, setImgUrl] = useState(null);
+
 
   //select last index of personDetails array as data for rendering
   let selector = 0;
   if (personDetails.length > 1) {
     selector = personDetails.length - 1;
   }
+
+  let image = personDetails[selector].image;
+  useEffect(()=>{
+      if(image){
+          setImgUrl(URL.createObjectURL(image));
+      }
+  }, [image])
 
   return (
     <div className="displayAll">
@@ -20,7 +29,7 @@ const Cv = ({ personDetails }) => {
           <section className="personal">
             <div className="profile">
               <div className="profileimg-left">
-                <img className="profile-img" src={personDetails[selector].image} alt=""></img>
+                <img className="profile-img" src={imgUrl} alt=""></img>
               </div>
               <div className="profiledetail-right">
                 <div>

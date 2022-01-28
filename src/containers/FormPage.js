@@ -3,12 +3,14 @@ import { useState } from "react";
 import Form from "../components/Form/Form";
 import { useNavigate } from "react-router-dom";
 
+
 export const FormPage = ({addPersonDetails}) =>{
 
     //creating and setting states 
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
+    const [job, setJob] = useState('');
     const [email, setEmail] = useState('');
     const [linkedInLink, setLinkedInLink] = useState('');
     const [exp1StartDate, setExp1StartDate] = useState('');
@@ -23,13 +25,15 @@ export const FormPage = ({addPersonDetails}) =>{
     const [edu1EndDate, setEdu1EndDate] = useState('');
     const [education, setEducation] = useState('');
     const [education1, setEducation1] = useState('');
-    const [image, setImage] = useState('');
-
+    const [image, setImage] = useState(null);
+   
 
     //instance of the personDetails state to save and addPersonDetails
     const personDetail ={
+
         image,
         name,
+        job,
         phoneNumber,
         email,
         linkedInLink,
@@ -52,7 +56,6 @@ export const FormPage = ({addPersonDetails}) =>{
     }
 
     let navigate = useNavigate();
-    let fileInput = React.createRef();
 
     //function to handle form submit
     const handleSubmit = (e) => {
@@ -67,6 +70,7 @@ export const FormPage = ({addPersonDetails}) =>{
         setEmail('')
         setLinkedInLink('')
         setAddress('')
+        setJob('')
 
         setExpStartDate('')
         setExpEndDate('')
@@ -106,39 +110,43 @@ export const FormPage = ({addPersonDetails}) =>{
         setEmail(e.target.value);
     }
 
+    const handleJobChange = (e) => {
+        setJob(e.target.value)
+    }
+
     const handleLinkedInChange = (e) => {
         setLinkedInLink(e.target.value);
     }
 
-    const handleExpStartChange = e => {
+    const handleExpStartChange = (e) => {
         setExpStartDate(e.target.value)
     }
 
-    const handleExpEndChange = e => {
+    const handleExpEndChange = (e) => {
         setExpEndDate(e.target.value)
     }
 
-    const handleExp1StartChange = e => {
+    const handleExp1StartChange = (e) => {
         setExp1StartDate(e.target.value)
     }
 
-    const handleExp1EndChange = e => {
+    const handleExp1EndChange = (e) => {
         setExp1EndDate(e.target.value)
     }
 
-    const handleEduStartChange = e => {
+    const handleEduStartChange = (e) => {
         setEduStartDate(e.target.value)
     }
 
-    const handleEduEndChange = e => {
+    const handleEduEndChange = (e) => {
         setEduEndDate(e.target.value)
     }
 
-    const handleEdu1StartChange = e => {
+    const handleEdu1StartChange = (e) => {
         setEdu1StartDate(e.target.value)
     }
 
-    const handleEdu1EndChange = e => {
+    const handleEdu1EndChange = (e) => {
         setEdu1EndDate(e.target.value)
     }
 
@@ -158,17 +166,15 @@ export const FormPage = ({addPersonDetails}) =>{
         setEducation1(e.target.value);
     }
 
-    const handleImageUpload = () => {
-        
-        //setImage(URL.createObjectURL(e.target.files));
-        setImage(fileInput.current.files[0].name);
+    const handleImageUpload = (e) => {
+        setImage(e.target.files[0]);
     }
+
 
 
     return(
     <>
         <Form
-            
             handleImageUpload = {handleImageUpload}
             image={image}
             handleSubmit = {handleSubmit}
@@ -178,6 +184,8 @@ export const FormPage = ({addPersonDetails}) =>{
             handlePhoneChange={handlePhoneChange}
             email={email}
             handleEmailChange={handleEmailChange}
+            job={job}
+            handleJobChange={handleJobChange}
             linkedInLink ={linkedInLink}
             handleLinkedInChange={handleLinkedInChange}
             address={address}

@@ -2,6 +2,8 @@ import React from "react";
 import "./form.css";
 
 const Form = ({
+  handleImageUpload,
+  imgUrl,
   handleSubmit,
   name,
   handleNameChange,
@@ -53,31 +55,31 @@ const Form = ({
           <br />
           <br />
           <label className="form-label">
-            Upload Photo<input className="file-upload" type="file"></input>
+            Upload Photo<input className="file-upload" accept="image/*" type="file" onChange={handleImageUpload}></input>
           </label>
          
           <div className="line-1">
           <input
             placeholder="Enter your full name"
             onChange={handleNameChange}
-            value={name}
-            required
+            value={name}npm
+            //required
             className="input"
           ></input>
           <input
             placeholder="Enter your current job"
             onChange={handleJobChange}
             value={job}
-            required
+            //required
             className="input"
           ></input>
           </div>
           <div className="line-1">
           <input
-            placeholder="Enter your phone number"
+            placeholder="Phone number"
             type="tel"
             value={phoneNumber}
-            pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
+            pattern="[0-9]{4}[0-9]{3}[0-9]{3}"
             onChange={handlePhoneChange}
             className="input"
           ></input>
@@ -85,7 +87,7 @@ const Form = ({
           <input
             placeholder="Enter your e-mail"
             type="email"
-            required
+            //required
             value={email}
             onChange={handleEmailChange}
             className="input"
@@ -97,7 +99,7 @@ const Form = ({
             type="url"
             onChange={handleLinkedInChange}
             value={linkedInLink}
-            required
+            //required
             className="input"
           ></input>
 
@@ -120,7 +122,7 @@ const Form = ({
               type="month"
               value={expStartDate}
               onChange={handleExpStartChange}
-              required
+              //required
               className="input"
             ></input>
           <br />
@@ -131,7 +133,7 @@ const Form = ({
               type="month"
               value={expEndDate}
               onChange={handleExpEndChange}
-              required
+              //required
               className="input"
             ></input>
           <br />
@@ -140,11 +142,11 @@ const Form = ({
           <div className="experience-1">
           <textarea
             placeholder="Experience"
-            onChange={handleExperience1Change}
-            value={experience1}
+            onChange={handleExperienceChange}
+            value={experience}
             rows={10}
             cols={50}
-            required
+            //required
             className="textarea"
           ></textarea>
           </div>
@@ -194,7 +196,7 @@ const Form = ({
               type="month"
               value={eduStartDate}
               onChange={handleEduStartChange}
-              required
+              //required
               className="input"
             ></input>
         
@@ -206,7 +208,7 @@ const Form = ({
               type="month"
               value={eduEndDate}
               onChange={handleEduEndChange}
-              required
+              //required
               className="input-2"
             ></input>
          
@@ -217,7 +219,7 @@ const Form = ({
             placeholder="Institution Attended"
             onChange={handleEducationChange}
             value={education}
-            required
+            //required
             className="input-school"
           ></input>
           </div>
