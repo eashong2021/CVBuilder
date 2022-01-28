@@ -1,9 +1,10 @@
 .form-content {
-  width: 70vw;
-  height: 200vh;
+  width: 70%;
+  height: max-content;
   margin: 10vh auto;
   background-color:#fff3e4;
   border-radius: 10px;
+  padding: 10px;
 }
 
 textarea{
@@ -11,13 +12,15 @@ textarea{
 }
 .main-form {
     width: 80%;
-    height: 80%;
+    height: max-content;
     margin: auto;
-    margin-top: 3em;
+
 }
 .field-1 {
    border-radius: 10px;
-   height: 24vw;
+   height: max-content;
+   padding: 1em;
+
 }
 .form-content .profile {
     text-align: center;
@@ -39,7 +42,7 @@ textarea{
 }
 
  .form-content .input {
-  height: 40px;
+  height: 3em;
   width: 45%;
   border: 1px solid #483434;
   border-radius: 5px;
@@ -48,15 +51,15 @@ textarea{
 }
 ::placeholder {
     color: #483434;
-    padding: 10px;
+    padding: 8px;
 }
 .form-content .first-experience {
     display: flex;
     justify-content: space-between;
 }
 .first-experience .input {
-    height: 40px;
-    width: 35%;
+    height: 3em;
+    width: 25%;
     border: 1px solid #483434;
     border-radius: 5px;
     margin-top: 25px;
@@ -85,11 +88,14 @@ textarea{
 
 .form-content .field-2 {
     border-radius: 10px;
-    height: 44vw;
+    height: max-content;
+    padding: 1em;
+    margin: 1.5em auto;
  }
  .form-content .field-3 {
     border-radius: 10px;
-    height: 28vw;
+    height: max-content;
+    padding: 1em;
  }
 .form-content .institution {
     margin-top: 2em;
@@ -103,8 +109,7 @@ textarea{
 }
 .form-content .button-div {
     width: 25%;
-    margin: auto;
-    margin-top: 2em;
+    margin: 2em auto;
 }
 
 .form-content .formbtn {

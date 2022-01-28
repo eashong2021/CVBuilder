@@ -170,7 +170,7 @@ const Form = ({
               type="month"
               value={exp1EndDate}
               onChange={handleExp1EndChange}
-              className="input-2"
+              className="input"
             ></input>
           </div>
           <br />
@@ -209,7 +209,7 @@ const Form = ({
               value={eduEndDate}
               onChange={handleEduEndChange}
               //required
-              className="input-2"
+              className="input"
             ></input>
          
           </div>
@@ -244,7 +244,7 @@ const Form = ({
               type="month"
               value={edu1EndDate}
               onChange={handleEdu1EndChange}
-              className="input-2"
+              className="input"
             ></input>
           
           </div>
