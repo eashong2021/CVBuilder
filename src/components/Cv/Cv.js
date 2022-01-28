@@ -13,6 +13,7 @@ const Cv = ({ personDetails }) => {
     selector = personDetails.length - 1;
   }
 
+  //creating url for the image src with URL.createObjectURL
   let image = personDetails[selector].image;
   useEffect(()=>{
       if(image){
