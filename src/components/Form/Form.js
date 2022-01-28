@@ -3,7 +3,6 @@ import "./form.css";
 
 const Form = ({
   handleImageUpload,
-  imgUrl,
   handleSubmit,
   name,
   handleNameChange,
@@ -76,10 +75,10 @@ const Form = ({
           </div>
           <div className="line-1">
           <input
-            placeholder="Phone number"
+            placeholder="Phone number (Format: 0123-456-789)"
             type="tel"
             value={phoneNumber}
-            pattern="[0-9]{4}[0-9]{3}[0-9]{3}"
+            pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
             onChange={handlePhoneChange}
             className="input"
           ></input>
