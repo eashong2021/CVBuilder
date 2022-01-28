@@ -1,26 +1,138 @@
-form{
-    display: flex;
-   flex-direction: column;
-   flex-wrap: wrap;
-   justify-content: space-evenly;
-   align-content: center;
-    width: 40%;
-    margin: 40px auto;
-    background-color: aquamarine;
-    padding: 20px;
-    border-radius: 50px;
-}
-
-input{
-    height: 40px;
-    width: 300px;
-    margin: 10px 0;
+.form-content {
+  width: 70%;
+  height: max-content;
+  margin: 10vh auto;
+  background-color:#fff3e4;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 textarea{
-    margin: 10px 0; 
+    font-size: 16px;
+}
+.main-form {
+    width: 80%;
+    height: max-content;
+    margin: auto;
+
+}
+.field-1 {
+   border-radius: 10px;
+   height: max-content;
+   padding: 1em;
+
+}
+.form-content .profile {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #6b4f4f;
+}
+.form-content .form-label {
+    font-size: 18px;
+    color: #f00404;
+    margin-left: 16rem;
+    margin-top: 2%;
+}
+.form-content .line-1 {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
 }
 
-button{
-    padding: 10px;
+ .form-content .input {
+  height: 3em;
+  width: 45%;
+  border: 1px solid #483434;
+  border-radius: 5px;
+  margin-top: 25px;
+
 }
+::placeholder {
+    color: #483434;
+    padding: 8px;
+}
+.form-content .first-experience {
+    display: flex;
+    justify-content: space-between;
+}
+.first-experience .input {
+    height: 3em;
+    width: 25%;
+    border: 1px solid #483434;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+.first-experience .start {
+    padding: 25px;
+    font-size: 18px;
+    color: #483434;
+}
+.form-content .experience-1 {
+    width: 100%;
+}
+.form-content .experience-1 .textarea {
+    width: 70%;
+    border-radius: 5px;
+    margin-left: 15%;
+}
+.form-content .input-2 {
+    height: 40px;
+    width: 35%;
+    border: 1px solid #483434;
+    border-radius: 5px;
+    margin-top: 25px;
+    margin-right: 14px;
+}
+
+.form-content .field-2 {
+    border-radius: 10px;
+    height: max-content;
+    padding: 1em;
+    margin: 1.5em auto;
+ }
+ .form-content .field-3 {
+    border-radius: 10px;
+    height: max-content;
+    padding: 1em;
+ }
+.form-content .institution {
+    margin-top: 2em;
+}
+.form-content .input-school {
+    height: 40px;
+    width: 55%;
+    border: 1px solid #483434;
+    border-radius: 5px;
+    margin-left: 13em;
+}
+.form-content .button-div {
+    width: 25%;
+    margin: 2em auto;
+}
+
+.form-content .formbtn {
+        font-size: 16px;
+        letter-spacing: 2px;
+        font-weight: 400 !important;
+        background-color: #483434;
+        color: #fff;
+        padding: 23px 50px;
+        margin: auto;
+        text-align: center;
+        display: inline-block !important;
+        text-decoration: none;
+        border: 0px;
+        border-radius: 5px;
+        width: max-content;
+        cursor: pointer;
+        transition: all 0.3s 0s ease-in-out;
+    }
+    
+    .form-content .formbtn:hover {
+        transform: scale(1.04, 1);
+        background-color:#EED6c4;
+        text-decoration: none;
+        color: #483434;
+    }
