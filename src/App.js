@@ -16,9 +16,9 @@ function App() {
 
   return (
     <>
-      <nav>
-        <Link to="/">Form</Link>
-        <Link to="/cv">Generate CV</Link>
+      <nav className='App-header'>
+        <Link className="links" to="/">Form</Link>
+        <Link className="links" to="/cv">Generate CV</Link>
       </nav>
       <Routes>
         <Route 

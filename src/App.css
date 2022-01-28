@@ -14,14 +14,39 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #ffffff;
+  height: 9vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.links{
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: 400 !important;
+  background-color: #483434;
+  color: #fff;
+  padding: 23px 50px;
+  margin: auto 40px;
+  text-decoration: none;
+  border: 0px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s 0s ease-in-out;
+}
+
+.links:hover{
+    transform: scale(1.04, 1);
+    background-color:#EED6c4;
+    text-decoration: none;
+    color: #483434;
 }
 
 .App-link {
