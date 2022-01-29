@@ -4,7 +4,7 @@ import {useState} from 'react';
 import { FormPage } from './containers/FormPage';
 import { Routes, Route, Link } from 'react-router-dom';
 import Cv from './components/Cv/Cv';
-
+import Form2 from './components/Form2/Form2';
 
 function App() {
 
@@ -16,9 +16,9 @@ function App() {
 
   return (
     <>
-      <nav>
-        <Link to="/">Form</Link>
-        <Link to="/cv">Generate CV</Link>
+      <nav className='App-header'>
+        <Link className="links" to="/">Form</Link>
+        <Link className="links" to="/cv">Generate CV</Link>
       </nav>
       <Routes>
         <Route 

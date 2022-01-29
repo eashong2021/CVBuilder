@@ -1,36 +1,67 @@
-import React from 'react';
-import './form2.css';
+import React, { Component, useState } from "react";
+import { dataSet } from "../../containers/dataSet";
+import { default as ReactSelect } from "react-select";
+// import "./styles.css";
+import { components } from "react-select";
 
-const Form2 = () => {
-    return(
-        <form>
-            <textarea 
-            placeholder='Personal Profile'
-            rows={50}
-            cols={10}>
-            </textarea>
-            <input placeholder='Personal Pofile'
-             onChange={handleEducationChange}
-             value={personalProfile}>
-             </input>
-             <textarea 
-            placeholder='Professional Skill'
-            rows={50}
-            cols={10}></textarea>
-            <input placeholder='Professional Skills'
-             onChange={handleEducationChange}
-             value={professionalSkills}>
-             </input>
-             <textarea 
-            placeholder='Personal Skills'
-            rows={50}
-            cols={10}></textarea>
-            <input placeholder='Personal Profile'
-             onChange={handleEducationChange}
-             value={personalProfile}>
-             </input>
-        </form>
-    )
-}
+const Option = (props) => {
+  return (
+    <div>
+      <components.Option {...props}>
+        <input
+          type="checkbox"
+          checked={props.isSelected}
+          onChange={() => null}
+        />{" "}
+        <label>{props.label}</label>
+      </components.Option>
+    </div>
+  );
+};
 
+const Form2 = (props) => {
+  const [select, setSelect] = useState([]);
+
+  const handleChange = (selected) => {
+    setSelect(selected);
+  };
+  return (
+    <form>
+      <div className="career-objective">
+        <label>Career Objective</label>
+        <textarea
+          className="input"
+          placeholder=" Please Enter Career Objective"
+          // onChange={handlePersonalprofileChange}
+          // value={personalProfile}
+        ></textarea>
+      </div>
+      <div className="professional-skills">
+        <label>Professional Skills</label>
+        <ReactSelect
+          options={dataSet}
+          isMulti
+          closeMenuOnSelect={false}
+          hideSelectedOptions={false}
+          components={{
+            Option,
+          }}
+          onChange={handleChange}
+          allowSelectAll={true}
+          value={select}
+        />
+      </div>
+      <div className="career-objective">
+        <label>Personal Skills</label>
+        <textarea
+          className="textarea"
+          placeholder="Enter Personal Skills"
+         
+          // onChange={handlePersonalprofileChange}
+          // value={personalProfile}
+        ></textarea>
+      </div>
+    </form>
+  );
+};
 export default Form2;

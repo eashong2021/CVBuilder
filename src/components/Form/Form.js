@@ -1,7 +1,9 @@
 import React from "react";
 import "./form.css";
+import Form2 from "../Form2/Form2";
 
 const Form = ({
+  handleImageUpload,
   handleSubmit,
   name,
   handleNameChange,
@@ -52,9 +54,9 @@ const Form = ({
           <legend className="profile">Profile</legend>
           <br />
           <br />
-          <label className="form-label">
-            Upload Photo<input className="file-upload" type="file"></input>
-          </label>
+          <label className="form-label">Upload Photo </label>
+          <input className="file-upload" accept="image/*" type="file" onChange={handleImageUpload}></input>
+          
          
           <div className="line-1">
           <input
@@ -74,7 +76,7 @@ const Form = ({
           </div>
           <div className="line-1">
           <input
-            placeholder="Enter your phone number"
+            placeholder="Phone number (Format: 0123-456-789)"
             type="tel"
             value={phoneNumber}
             pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
@@ -140,9 +142,9 @@ const Form = ({
           <div className="experience-1">
           <textarea
             placeholder="Experience"
-            onChange={handleExperience1Change}
-            value={experience1}
-            rows={10}
+            onChange={handleExperienceChange}
+            value={experience}
+            rows={7}
             cols={50}
             required
             className="textarea"
@@ -168,7 +170,7 @@ const Form = ({
               type="month"
               value={exp1EndDate}
               onChange={handleExp1EndChange}
-              className="input-2"
+              className="input"
             ></input>
           </div>
           <br />
@@ -177,7 +179,7 @@ const Form = ({
             placeholder="Experience"
             onChange={handleExperience1Change}
             value={experience1}
-            rows={10}
+            rows={7}
             cols={50}
             className="textarea"
           ></textarea>
@@ -207,7 +209,7 @@ const Form = ({
               value={eduEndDate}
               onChange={handleEduEndChange}
               required
-              className="input-2"
+              className="input"
             ></input>
          
           </div>
@@ -242,7 +244,7 @@ const Form = ({
               type="month"
               value={edu1EndDate}
               onChange={handleEdu1EndChange}
-              className="input-2"
+              className="input"
             ></input>
           
           </div>
@@ -256,6 +258,9 @@ const Form = ({
           ></input>
           </div>
         </fieldset>
+        <div className="form-2">
+          <Form2 />
+        </div>
         <div className="button-div">
         <button className="formbtn" type="submit">Generate CV</button>
         </div>

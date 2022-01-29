@@ -1,15 +1,32 @@
-import React, { useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactToPrint from "react-to-print";
 import "./Cv.css";
+import Form2 from "../Form2/Form2";
+
+
+
+
+
+
 
 const Cv = ({ personDetails }) => {
   const myRef = useRef(null);
+  const [imgUrl, setImgUrl] = useState(null);
+
 
   //select last index of personDetails array as data for rendering
   let selector = 0;
   if (personDetails.length > 1) {
     selector = personDetails.length - 1;
   }
+
+  //creating url for the image src with URL.createObjectURL
+  let image = personDetails[selector].image;
+  useEffect(()=>{
+      if(image){
+          setImgUrl(URL.createObjectURL(image));
+      }
+  }, [image])
 
   return (
     <div className="displayAll">
@@ -20,7 +37,7 @@ const Cv = ({ personDetails }) => {
           <section className="personal">
             <div className="profile">
               <div className="profileimg-left">
-                <img className="profile-img" src={personDetails[selector].image} alt=""></img>
+                <img className="profile-img" src={imgUrl} alt=""></img>
               </div>
               <div className="profiledetail-right">
                 <div>
@@ -61,17 +78,14 @@ const Cv = ({ personDetails }) => {
           </div>
         </div>
         <div className="right-side">
-          <div>
-            <h2>Personal Profile</h2>
+          <div className="own-profile">
+            <h2>"     "</h2>
           </div>
-          <div>
-            <h2>Professional Skill</h2>
+          <div className="professional-skill">
+            <h2>Pro Skill</h2>
           </div>
-          <div>
-            <h2>Personal Skills</h2>
-          </div>
-          <div>
-            <h2>right side</h2>
+          <div className="personal-skill">
+            <h2>Personal Skill</h2>
           </div>
         </div>
       </div>
