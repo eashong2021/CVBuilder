@@ -174,6 +174,7 @@ export const FormPage = ({addPersonDetails}) =>{
 
     return(
     <>
+    
         <Form
             handleImageUpload = {handleImageUpload}
             image={image}
@@ -220,7 +221,7 @@ export const FormPage = ({addPersonDetails}) =>{
             handleEducation1Change={handleEducation1Change}
             
         />
-    
+
     </>
     )
 

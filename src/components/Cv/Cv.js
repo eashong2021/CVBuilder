@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactToPrint from "react-to-print";
 import "./Cv.css";
+import Form2 from "../Form2/Form2";
+
+
+
+
+
+
 
 const Cv = ({ personDetails }) => {
   const myRef = useRef(null);
@@ -71,17 +78,14 @@ const Cv = ({ personDetails }) => {
           </div>
         </div>
         <div className="right-side">
-          <div>
-            <h2></h2>
+          <div className="own-profile">
+            <h2>"     "</h2>
           </div>
-          <div>
-            <h2></h2>
+          <div className="professional-skill">
+            <h2>Pro Skill</h2>
           </div>
-          <div>
-            <h2></h2>
-          </div>
-          <div>
-            <h2></h2>
+          <div className="personal-skill">
+            <h2>Personal Skill</h2>
           </div>
         </div>
       </div>

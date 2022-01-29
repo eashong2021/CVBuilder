@@ -1,5 +1,6 @@
 import React from "react";
 import "./form.css";
+import Form2 from "../Form2/Form2";
 
 const Form = ({
   handleImageUpload,
@@ -61,7 +62,7 @@ const Form = ({
           <input
             placeholder="Enter your full name"
             onChange={handleNameChange}
-            value={name}npm
+            value={name}
             required
             className="input"
           ></input>
@@ -257,6 +258,9 @@ const Form = ({
           ></input>
           </div>
         </fieldset>
+        <div className="form-2">
+          <Form2 />
+        </div>
         <div className="button-div">
         <button className="formbtn" type="submit">Generate CV</button>
         </div>
