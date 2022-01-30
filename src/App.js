@@ -4,7 +4,7 @@ import {useState} from 'react';
 import { FormPage } from './containers/FormPage';
 import { Routes, Route, Link } from 'react-router-dom';
 import Cv from './components/Cv/Cv';
-
+import Form2 from './components/Form2/Form2';
 
 function App() {
 

@@ -96,10 +96,9 @@
     transition: all 0.3s 0s ease-in-out;
 }
 
-.share-print:hover{
+/* .share-print:hover{
     transform: scale(1.04, 1);
     background-color:#EED6c4;
     text-decoration: none;
     color: #483434;
-}
-
+} */
