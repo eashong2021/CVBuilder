@@ -1,5 +1,5 @@
 import React from "react";
-import { dataSet } from "../../containers/dataSet";
+import {dataSet} from "../../containers/dataSet";
 import { default as ReactSelect } from "react-select";
 import '../Form/form.css'
 

@@ -53,18 +53,18 @@ export const Cv = ({ personDetails }) => {
             <div>
               <section className="experience">
                 <h2 className="heading-left">Experience</h2>
-                <h4>{details.expStartDate}</h4>
+                <h4>{`${details.expStartDate} - ${details.expEndDate}`}</h4>
                 <p>{details.experience}</p>
-                <h4>{details.exp1StartDate}</h4>
+                <h4>{`${details.exp1StartDate} - ${details.exp1EndDate}`}</h4>
                 <p>{details.experience1}</p>
               </section>
             </div>
             <div>
               <section className="education">
                 <h2 className="heading-left">Education</h2>
-                <h4>{details.eduStartDate}</h4>
+                <h4>{`${details.eduStartDate} - ${details.eduEndDate}`}</h4>
                 <p>{details.education}</p>
-                <h4>{details.edu1StartDate}</h4>
+                <h4>{`${details.edu1StartDate} - ${details.edu1EndDate}`}</h4>
                 <p>{details.education1}</p>
               </section>
             </div>
@@ -72,7 +72,7 @@ export const Cv = ({ personDetails }) => {
         </div>
         <div className="right-side">
           <div className="own-profile">
-            <h2>{details.personalProfile}</h2>
+            <p>{details.personalProfile}</p>
           </div>
           <div className="professional-skill">
             <h2>Pro Skill</h2>
@@ -80,6 +80,7 @@ export const Cv = ({ personDetails }) => {
           </div>
           <div className="personal-skill">
             <h2>Personal Skill</h2>
+            <p>{details.personalSkills}</p>
           </div>
         </div>
       </div>
