@@ -1,67 +1,69 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import { dataSet } from "../../containers/dataSet";
 import { default as ReactSelect } from "react-select";
-// import "./styles.css";
-import { components } from "react-select";
+import '../Form/form.css'
 
-const Option = (props) => {
+
+
+const Form2 = ({
+  option,
+  handleChange,
+  professionalSkills,
+  handlePersonalProfileChange,
+  personalProfile,
+  handleSubmit,
+  handlePersonalSkillsChange,
+  personalSkills
+}) => {
+
+  
   return (
-    <div>
-      <components.Option {...props}>
-        <input
-          type="checkbox"
-          checked={props.isSelected}
-          onChange={() => null}
-        />{" "}
-        <label>{props.label}</label>
-      </components.Option>
-    </div>
-  );
-};
-
-const Form2 = (props) => {
-  const [select, setSelect] = useState([]);
-
-  const handleChange = (selected) => {
-    setSelect(selected);
-  };
-  return (
-    <form>
+  <div className="form-content">
+    <form className="main-form" onSubmit={handleSubmit}>
       <div className="career-objective">
         <label>Career Objective</label>
         <textarea
-          className="input"
+          className="textarea"
+          rows={7}
+            cols={50}
           placeholder=" Please Enter Career Objective"
-          // onChange={handlePersonalprofileChange}
-          // value={personalProfile}
+          onChange={handlePersonalProfileChange}
+          value={personalProfile}
         ></textarea>
       </div>
       <div className="professional-skills">
         <label>Professional Skills</label>
         <ReactSelect
+          
           options={dataSet}
           isMulti
           closeMenuOnSelect={false}
           hideSelectedOptions={false}
           components={{
-            Option,
+            option,
           }}
           onChange={handleChange}
           allowSelectAll={true}
-          value={select}
+          value={professionalSkills}
         />
       </div>
       <div className="career-objective">
         <label>Personal Skills</label>
         <textarea
           className="textarea"
+          rows={7}
+            cols={50}
           placeholder="Enter Personal Skills"
          
-          // onChange={handlePersonalprofileChange}
-          // value={personalProfile}
+          onChange={handlePersonalSkillsChange}
+          value={personalSkills}
         ></textarea>
       </div>
+      <div className="button-div">
+        <button className="formbtn" type="submit">{`Generate CV`} </button>
+        </div>
     </form>
+  </div>
   );
 };
 export default Form2;

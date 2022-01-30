@@ -1,54 +1,83 @@
 import React from "react";
 import { useState } from "react";
-import Form from "../components/Form/Form";
+import Form2 from "../components/Form2/Form2";
 import { useNavigate } from "react-router-dom";
+import { components } from "react-select";
 
 
 
-export const Form2Page = ({addpersonalDetails}) =>{
+export const Form2Page = ({addPersonDetails}) =>{
+
+    const Option = (props) => {
+        return (
+          <div>
+            <components.Option {...props}>
+              <input
+                type="checkbox"
+                checked={props.isSelected}
+                onChange={() => null}
+              />{" "}
+              <label>{props.label}</label>
+            </components.Option>
+          </div>
+        );
+      };
+  
 
   //creating and setting states 
-  const [personalprofile, setPersonalprofile] = useState('');
-  const [professionalskills, setProfessionalskills] = useState('');
-  const [personalskills, setPersonalskills] = useState('');
+  const [personalProfile, setPersonalProfile] = useState('');
+  const [professionalSkills, setProfessionalSkills] = useState([]);
+  const [personalSkills, setPersonalSkills] = useState('');
 
 //instance of the personDetails state to save and addPersonDetails
-const personalDetails ={
-personalProfile,
-professionalSkills,
-personalSkills
+const personDetail ={
+    
+    personalProfile,
+    professionalSkills,
+    personalSkills
 }
+
 let navigate = useNavigate();
 
+const handleChange = (selected) => {
+    setProfessionalSkills(selected);
+  };
 
-
-const handlepersonalProfileChange = (e) => {
+const handlePersonalProfileChange = (e) => {
     setPersonalProfile(e.target.value);
 }
 
-const handleprofessionalSkillsChange = (e) => {
-    setProfessionalSkills(e.target.value);
+
+const handlePersonalSkillsChange = (e) => {
+    setPersonalSkills(e.target.value);
 }
 
-const handlepersonalSkillsChange = (e) => {
-    setPersonalSkills(e.target.value);
+const handleSubmit = (e) => {
+    e.preventDefault();
+
+    //add person details to personDetails
+    addPersonDetails(personDetail);
+
+    navigate('/cv');
 }
 
 
 return(
     <>
-        <Form2Page
-            handlepersonalProfileUpload = {handlePersonalProfileUpload}
+        <Form2
+            handleChange = {handleChange}
+            option = {Option}
+            handlePersonalProfileChange = {handlePersonalProfileChange}
             personalProfile={personalProfile}
             handleSubmit={handleSubmit}
-            handleprofessionalSkillsChange={handleProfessionalSkillsChange}
             professionalSkills={professionalSkills}
-            handlepersonalSkillsChange={handlePersonalSkillsChange}
+            handlePersonalSkillsChange={handlePersonalSkillsChange}
             personalSkills={personalSkills}
-/>
-</>
+        />
+    </>
 )
 }
+
 
 
 

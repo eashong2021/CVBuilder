@@ -1,27 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactToPrint from "react-to-print";
 import "./Cv.css";
-import Form2 from "../Form2/Form2";
 
 
-
-
-
-
-
-const Cv = ({ personDetails }) => {
+export const Cv = ({ personDetails }) => {
   const myRef = useRef(null);
   const [imgUrl, setImgUrl] = useState(null);
 
+  const details = Object.keys(personDetails).map(key => personDetails[key]).reduce((old, item) =>(
+    {...old , ...item}
+  ), {})
 
-  //select last index of personDetails array as data for rendering
-  let selector = 0;
-  if (personDetails.length > 1) {
-    selector = personDetails.length - 1;
-  }
+    console.log(details)
 
   //creating url for the image src with URL.createObjectURL
-  let image = personDetails[selector].image;
+  let image = details.image;
   useEffect(()=>{
       if(image){
           setImgUrl(URL.createObjectURL(image));
@@ -42,15 +35,15 @@ const Cv = ({ personDetails }) => {
               <div className="profiledetail-right">
                 <div>
                   <div >
-                    <h3 className="heading-left">{personDetails[selector].name}</h3>
-                    <h4 className="job-title">{personDetails[selector].job}</h4>
+                    <h3 className="heading-left">{details.name}</h3>
+                    <h4 className="job-title">{details.job}</h4>
                   </div>
 
                   <div className="other-personal">
-                    <p>{personDetails[selector].phoneNumber}</p>
-                    <p>{personDetails[selector].email}</p>
-                    <p>{personDetails[selector].linkedInLink}</p>
-                    <p>{personDetails[selector].address}</p>
+                    <p>{details.phoneNumber}</p>
+                    <p>{details.email}</p>
+                    <p>{details.linkedInLink}</p>
+                    <p>{details.address}</p>
                   </div>
                 </div>
               </div>
@@ -60,29 +53,30 @@ const Cv = ({ personDetails }) => {
             <div>
               <section className="experience">
                 <h2 className="heading-left">Experience</h2>
-                <h4>{personDetails[selector].expStartDate}</h4>
-                <p>{personDetails[selector].experience}</p>
-                <h4>{personDetails[selector].exp1StartDate}</h4>
-                <p>{personDetails[selector].experience1}</p>
+                <h4>{details.expStartDate}</h4>
+                <p>{details.experience}</p>
+                <h4>{details.exp1StartDate}</h4>
+                <p>{details.experience1}</p>
               </section>
             </div>
             <div>
               <section className="education">
                 <h2 className="heading-left">Education</h2>
-                <h4>{personDetails[selector].eduStartDate}</h4>
-                <p>{personDetails[selector].education}</p>
-                <h4>{personDetails[selector].edu1StartDate}</h4>
-                <p>{personDetails[selector].education1}</p>
+                <h4>{details.eduStartDate}</h4>
+                <p>{details.education}</p>
+                <h4>{details.edu1StartDate}</h4>
+                <p>{details.education1}</p>
               </section>
             </div>
           </div>
         </div>
         <div className="right-side">
           <div className="own-profile">
-            <h2>"     "</h2>
+            <h2>{details.personalProfile}</h2>
           </div>
           <div className="professional-skill">
             <h2>Pro Skill</h2>
+            {details.professionalSkills.map(element => <p>{element.value}</p>)}
           </div>
           <div className="personal-skill">
             <h2>Personal Skill</h2>
@@ -94,7 +88,7 @@ const Cv = ({ personDetails }) => {
         <ReactToPrint
             trigger={() => <button className="share-print"> Print/Download </button>}
             content={() => myRef.current}
-            documentTitle={`${personDetails[selector].name}`}
+            documentTitle={`${details.name}`}
         />
         <button className="share-print"> Share </button>
       </div>
@@ -102,4 +96,3 @@ const Cv = ({ personDetails }) => {
   );
 };
 
-export default Cv;
