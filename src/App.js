@@ -9,12 +9,16 @@ import { Form2Page } from './containers/Form2Page';
 
 function App() {
 
-  const [ personDetails, setPersonDetails] = useState([{}]);
+  const [ personDetails, setPersonDetails] = useState([]);
 
   const addPersonDetails = (details) => {
-    setPersonDetails({...personDetails, details});
+    setPersonDetails([...personDetails, details]);
   }
 
+  // const newDetails = setPersonDetails(personDetails.flat())
+  // console.log(newDetails)
+
+  
   return (
     <>
       <nav className='App-header'>

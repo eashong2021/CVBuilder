@@ -31,6 +31,7 @@ export const Form2Page = ({addPersonDetails}) =>{
 
 //instance of the personDetails state to save and addPersonDetails
 const personDetail ={
+    
     personalProfile,
     professionalSkills,
     personalSkills
