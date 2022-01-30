@@ -89,7 +89,7 @@ export const FormPage = ({addPersonDetails}) =>{
         setEducation1('')
 
         //navigate to cv component when button is clicked
-        navigate('/cv')
+        navigate('/form2')
 
     }
 

@@ -1,12 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactToPrint from "react-to-print";
 import "./Cv.css";
-import Form2 from "../Form2/Form2";
-
-
-
-
-
 
 
 const Cv = ({ personDetails }) => {
