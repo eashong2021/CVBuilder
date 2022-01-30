@@ -76,7 +76,7 @@ export const Cv = ({ personDetails }) => {
           </div>
           <div className="professional-skill">
             <h2>Pro Skill</h2>
-            {details.professionalSkills.map(element => <p>{element.label}</p>)}
+            {details.professionalSkills.map(element => <p>{element.value}</p>)}
           </div>
           <div className="personal-skill">
             <h2>Personal Skill</h2>

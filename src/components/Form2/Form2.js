@@ -18,11 +18,14 @@ const Form2 = ({
 
   
   return (
-    <form onSubmit={handleSubmit}>
+  <div className="form-content">
+    <form className="main-form" onSubmit={handleSubmit}>
       <div className="career-objective">
         <label>Career Objective</label>
         <textarea
-          className="input"
+          className="textarea"
+          rows={7}
+            cols={50}
           placeholder=" Please Enter Career Objective"
           onChange={handlePersonalProfileChange}
           value={personalProfile}
@@ -31,6 +34,7 @@ const Form2 = ({
       <div className="professional-skills">
         <label>Professional Skills</label>
         <ReactSelect
+          
           options={dataSet}
           isMulti
           closeMenuOnSelect={false}
@@ -47,6 +51,8 @@ const Form2 = ({
         <label>Personal Skills</label>
         <textarea
           className="textarea"
+          rows={7}
+            cols={50}
           placeholder="Enter Personal Skills"
          
           onChange={handlePersonalSkillsChange}
@@ -57,6 +63,7 @@ const Form2 = ({
         <button className="formbtn" type="submit">{`Generate CV`} </button>
         </div>
     </form>
+  </div>
   );
 };
 export default Form2;
