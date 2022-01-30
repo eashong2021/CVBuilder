@@ -3,15 +3,16 @@ import React from 'react';
 import {useState} from 'react';
 import { FormPage } from './containers/FormPage';
 import { Routes, Route, Link } from 'react-router-dom';
-import Cv from './components/Cv/Cv';
-import Form2Page from './components/Form2/Form2';
+import {Cv} from './components/Cv/Cv';
+import { Form2Page } from './containers/Form2Page';
+
 
 function App() {
 
   const [ personDetails, setPersonDetails] = useState([{}]);
 
   const addPersonDetails = (details) => {
-    setPersonDetails([...personDetails, details]);
+    setPersonDetails({...personDetails, details});
   }
 
   return (

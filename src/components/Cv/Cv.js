@@ -3,7 +3,7 @@ import ReactToPrint from "react-to-print";
 import "./Cv.css";
 
 
-const Cv = ({ personDetails }) => {
+export const Cv = ({ personDetails }) => {
   const myRef = useRef(null);
   const [imgUrl, setImgUrl] = useState(null);
 
@@ -96,4 +96,3 @@ const Cv = ({ personDetails }) => {
   );
 };
 
-export default Cv;

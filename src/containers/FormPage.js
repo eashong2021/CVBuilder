@@ -226,3 +226,5 @@ export const FormPage = ({addPersonDetails}) =>{
     )
 
 }
+
+export default FormPage;
