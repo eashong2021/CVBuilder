@@ -40,14 +40,26 @@ textarea{
     width: 90%;
     margin: auto;
 }
-
+.form-content .line-1 .column, .first-experience .column {
+    display: flex;
+    flex-direction: column;
+}
+.form-content .line-1 .column label, .first-experience .start {
+    margin-top: 1em;
+    text-align: left;
+    margin-left: 1px;
+}
  .form-content .input {
   height: 3em;
-  width: 45%;
+  width: 20vw;
   border: 1px solid #483434;
   border-radius: 5px;
-  margin-top: 25px;
-
+}
+.field-2 .first-experience .input {
+  height: 3em;
+  width: 20vw;
+  border: 1px solid #483434;
+  border-radius: 5px;
 }
 ::placeholder {
     color: #483434;
@@ -57,21 +69,11 @@ textarea{
     display: flex;
     justify-content: space-between;
 }
-.first-experience .input {
-    height: 3em;
-    width: 25%;
-    border: 1px solid #483434;
-    border-radius: 5px;
-    margin-top: 25px;
-}
-.first-experience .start {
-    padding: 25px;
-    font-size: 18px;
-    color: #483434;
-}
+
 .form-content .experience-1 {
     width: 100%;
 }
+ 
 .form-content .experience-1 .textarea {
     width: 70%;
     border-radius: 5px;
@@ -137,3 +139,17 @@ textarea{
         text-decoration: none;
         color: #483434;
     }
+.experience-1  {
+    text-align: center;
+}
+.experience-1 .textarea {
+    width: 60%;
+    margin-right: 6em;
+}
+.institution {
+    text-align: center;
+   
+}
+.institution .input-school {
+    margin-right: 13em;
+}

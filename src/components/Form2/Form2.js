@@ -1,7 +1,7 @@
 import React from "react";
 import {dataSet} from "../../containers/dataSet";
 import { default as ReactSelect } from "react-select";
-import '../Form/form.css'
+import './form2.css';
 
 
 
@@ -32,7 +32,7 @@ const Form2 = ({
         ></textarea>
       </div>
       <div className="professional-skills">
-        <label>Professional Skills</label>
+        <label className="label">Professional Skills</label>
         <ReactSelect
           
           options={dataSet}
@@ -45,6 +45,7 @@ const Form2 = ({
           onChange={handleChange}
           allowSelectAll={true}
           value={professionalSkills}
+          className='select-skills'
         />
       </div>
       <div className="career-objective">
