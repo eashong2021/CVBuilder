@@ -59,6 +59,8 @@ const Form = ({
           
          
           <div className="line-1">
+            <div className="column">
+            <label>Full Name</label>
           <input
             placeholder="Enter your full name"
             onChange={handleNameChange}
@@ -66,6 +68,9 @@ const Form = ({
             //required
             className="input"
           ></input>
+          </div>
+          <div className="column">
+            <label>Current Job</label>
           <input
             placeholder="Enter your current job"
             onChange={handleJobChange}
@@ -74,7 +79,10 @@ const Form = ({
             className="input"
           ></input>
           </div>
+          </div>
           <div className="line-1">
+          <div className="column">
+            <label>Phone Number</label>
           <input
             placeholder="Phone number (Format: 0123-456-789)"
             type="tel"
@@ -82,8 +90,11 @@ const Form = ({
             // pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
             onChange={handlePhoneChange}
             className="input"
+          
           ></input>
-
+          </div>
+            <div className="column">
+            <label>Email</label>
           <input
             placeholder="Enter your e-mail"
             type="email"
@@ -92,8 +103,11 @@ const Form = ({
             onChange={handleEmailChange}
             className="input"
           ></input>
+          </div>
             </div>
             <div className="line-1">
+            <div className="column">
+              <label>linkedIn</label>
           <input
             placeholder="Enter your linkedIn address"
             type="url"
@@ -102,7 +116,9 @@ const Form = ({
             //required
             className="input"
           ></input>
-
+          </div>
+          <div className="column">
+            <label>Address</label>
           <input
             placeholder="Enter your address"
             onChange={handleAddressChange}
@@ -110,11 +126,13 @@ const Form = ({
             className="input"
           ></input>
           </div>
+          </div>
         </fieldset >
 
         <fieldset className="field-2">
           <legend className="profile">Experience</legend>
           <div className="first-experience">
+            <div className="column">
           <label className="start">
             Start
             </label>
@@ -125,7 +143,9 @@ const Form = ({
               //required
               className="input"
             ></input>
+            </div>
           <br />
+          <div className="column">
           <label className="start">
             End
             </label>
@@ -136,10 +156,11 @@ const Form = ({
               //required
               className="input"
             ></input>
-          <br />
+            </div>
           </div>
           <br></br>
           <div className="experience-1">
+            <label>Enter Experience</label>
           <textarea
             placeholder="Experience"
             onChange={handleExperienceChange}
@@ -152,6 +173,7 @@ const Form = ({
           </div>
           <br></br>
           <div className="first-experience">
+          <div className="column">
           <label className="start">
             Start
             </label>
@@ -161,8 +183,8 @@ const Form = ({
               onChange={handleExp1StartChange}
               className="input"
             ></input>
-         
-          <br />
+         </div>
+         <div className="column">
           <label className="start">
             End
             </label>
@@ -172,9 +194,11 @@ const Form = ({
               onChange={handleExp1EndChange}
               className="input"
             ></input>
+            </div>
           </div>
           <br />
           <div className="experience-1">
+          <label>Enter Experience</label>
           <textarea
             placeholder="Experience"
             onChange={handleExperience1Change}
@@ -189,6 +213,7 @@ const Form = ({
         <fieldset className="field-3" >
           <legend className="profile">Education</legend>
           <div className="first-experience">
+          <div className="column">
           <label className="start">
             Start
             </label>
@@ -199,8 +224,9 @@ const Form = ({
               //required
               className="input"
             ></input>
+             </div>
         
-          <br />
+             <div className="column">
           <label className="start">
             End
             </label>
@@ -211,9 +237,10 @@ const Form = ({
               //required
               className="input"
             ></input>
-         
+         </div>
           </div>
           <div className="institution">
+            <label>Enter Institution Attended</label>
           <input
             type='text'
             placeholder="Institution Attended"
@@ -223,9 +250,10 @@ const Form = ({
             className="input-school"
           ></input>
           </div>
-          <br />
+          
           <br></br>
           <div className="first-experience">
+          <div className="column">
           <label className="start">
             Start
             </label>
@@ -235,8 +263,8 @@ const Form = ({
               onChange={handleEdu1StartChange}
               className="input"
             ></input>
-          
-          <br />
+          </div>
+          <div className="column">
           <label className="start">
             End
             </label>
@@ -246,9 +274,10 @@ const Form = ({
               onChange={handleEdu1EndChange}
               className="input"
             ></input>
-          
+          </div>
           </div>
           <div className="institution">
+          <label>Enter Institution Attended</label>
           <input
            type='text'
            placeholder="Institution Attended"

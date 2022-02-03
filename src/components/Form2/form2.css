@@ -1,0 +1,32 @@
+
+.main-form {
+    border: 2px solid #483434;
+    width: 80%;
+    height: 80%;
+    border-radius: 4px;
+}
+.career-objective {
+    display: flex;
+    flex-direction: column;
+}
+.professional-skills {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.main-form label, .professional-skills label {
+    color: #483434;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.career-objective textarea {
+    width: 80%;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+.professional-skills .select-skills {
+    width: 80%;
+    margin-left: 20px;
+}
